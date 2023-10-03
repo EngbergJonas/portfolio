@@ -1,0 +1,7 @@
+.language-button {
+  @apply border-gray-600 border-2 px-2;
+}
+
+.language-button.selected {
+  @apply border-gray-900 font-bold;
+}

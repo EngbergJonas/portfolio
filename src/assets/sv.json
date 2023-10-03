@@ -1,6 +1,16 @@
 {
-  "frontPageTitle": "Välkommen till Jonas portfolio",
-  "en": "English",
-  "fi": "Suomeksi",
-  "sv": "Svenska"
+  "app": {
+    "title": "Välkommen till Jonas portfolio"
+  },
+  "error": {
+    "title": "404 sidan hittades inte"
+  },
+  "info": {
+    "title": "Informationsvy"
+  },
+  "language": {
+    "en": "English",
+    "fi": "Suomeksi",
+    "sv": "Svenska"
+  }
 }

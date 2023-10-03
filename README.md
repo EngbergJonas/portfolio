@@ -8,3 +8,4 @@ Portfolio app for Jonas Engberg.
 - Prettier: code formatting
 - TailwindCSS: css helper library
 - React Router: routes
+- i18next: localization
