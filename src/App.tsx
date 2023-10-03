@@ -2,6 +2,8 @@ import i18next from 'i18next';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+const languages = ['en', 'fi', 'sv'];
+
 const App = () => {
   const { t } = useTranslation();
 
@@ -17,27 +19,16 @@ const App = () => {
         <h1>{t('frontPageTitle')}</h1>
       </header>
       <div className="flex flex-row gap-2" data-testid="language-switch">
-        <button
-          className="border-gray-600 border-2 px-2"
-          data-testid="lang-btn-en"
-          onClick={() => setLanguage('en')}
-        >
-          {'English'}
-        </button>
-        <button
-          className="border-gray-600 border-2 px-2"
-          data-testid="lang-btn-fi"
-          onClick={() => setLanguage('fi')}
-        >
-          {'Suomi'}
-        </button>
-        <button
-          className="border-gray-600 border-2 px-2"
-          data-testid="lang-btn-se"
-          onClick={() => setLanguage('se')}
-        >
-          {'Svenska'}
-        </button>
+        {languages.map((l) => (
+          <button
+            key={l}
+            className="border-gray-600 border-2 px-2"
+            data-testid="lang-btn-en"
+            onClick={() => setLanguage(l)}
+          >
+            {t(l)}
+          </button>
+        ))}
       </div>
     </div>
   );

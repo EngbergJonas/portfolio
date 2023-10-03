@@ -1,24 +1,21 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import translationsEn from './assets/en.json';
+import translationsFi from './assets/fi.json';
+import translationsSv from './assets/sv.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
   en: {
-    translation: {
-      frontPageTitle: 'Welcome to Jonas portfolio',
-    },
+    translation: translationsEn,
   },
   fi: {
-    translation: {
-      frontPageTitle: 'Tervetuloa Jonaksen portfolioon',
-    },
+    translation: translationsFi,
   },
-  se: {
-    translation: {
-      frontPageTitle: 'Välkommen till Jonas portfolio',
-    },
+  sv: {
+    translation: translationsSv,
   },
 };
 
