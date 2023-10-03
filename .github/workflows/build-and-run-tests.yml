@@ -1,6 +1,8 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them and run tests
 name: Build and Test App
 
+run-name: Building and Testing the App 🚀
+
 on:
   push:
     branches: ['main']
@@ -14,7 +16,7 @@ jobs:
       matrix:
         node-version: [20.x]
     steps:
-      - run: 'This job was automatically triggered by ${{ github.event_name }} event.'
+      - run: echo "This job was automatically triggered by ${{ github.event_name }} event."
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
