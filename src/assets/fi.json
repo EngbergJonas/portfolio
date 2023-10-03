@@ -1,0 +1,16 @@
+{
+  "app": {
+    "title": "Tervetuloa Jonaksen portfolioon"
+  },
+  "error": {
+    "title": "404 sivua ei löytynyt"
+  },
+  "info": {
+    "title": "Info-näkymä"
+  },
+  "language": {
+    "en": "English",
+    "fi": "Suomeksi",
+    "sv": "Svenska"
+  }
+}

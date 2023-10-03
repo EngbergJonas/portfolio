@@ -1,9 +1,15 @@
+import { useTranslation } from 'react-i18next';
+import LanguageToggler from './components/LanguageHandler/LanguageHandler';
+
 const App = () => {
+  const { t } = useTranslation();
+
   return (
     <div data-testid="app-view">
       <header>
-        <h1>App View</h1>
+        <h1>{t('app.title')}</h1>
       </header>
+      <LanguageToggler />
     </div>
   );
 };
