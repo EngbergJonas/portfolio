@@ -10,7 +10,7 @@ const LanguageToggler = () => {
 
   const [language, setLanguage] = useState<Language>(languages[0]);
 
-  // Change i18n language language changes
+  // Change i18n language when language changes
   useEffect(() => {
     changeLanguage(language);
   }, [language]);
