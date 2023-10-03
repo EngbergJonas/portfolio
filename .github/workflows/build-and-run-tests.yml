@@ -1,8 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them and run tests
 name: Build and Test App
 
-run-name: Building and Testing the App 🚀
-
 on:
   push:
     branches: ['main']
