@@ -1,16 +1,18 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routesConfig } from './routesConfig';
 
 export const user = userEvent.setup();
 
 // Custom render function for tests to be able to render the configured routes
 export const renderWithRouter = (route = '') => {
-  window.history.pushState({}, 'Test page', `/#/${route}`);
+  window.history.pushState({}, 'Test page', `/portfolio/${route}`);
 
   return {
     user,
-    ...render(<RouterProvider router={createHashRouter(routesConfig)} />),
+    ...render(
+      <RouterProvider router={createBrowserRouter(routesConfig, { basename: '/portfolio' })} />,
+    ),
   };
 };

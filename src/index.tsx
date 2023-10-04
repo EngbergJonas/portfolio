@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routesConfig } from './utils/routesConfig';
 import './i18n';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <RouterProvider router={createHashRouter(routesConfig)} />,
+  <RouterProvider router={createBrowserRouter(routesConfig, { basename: '/portfolio' })} />,
 );

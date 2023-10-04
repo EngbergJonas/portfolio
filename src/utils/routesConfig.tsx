@@ -23,6 +23,27 @@ export const routesConfig = [
   },
 ];
 
+// Define app routes here, used by index.tsx and testUtils.tsx
+// export const routesConfig = [
+//   {
+//     path: '/',
+//     element: (
+//       <>
+//         <App />
+//         <Outlet />
+//       </>
+//     ),
+//     errorElement: <ErrorView />,
+//     // Redirect / to /portfolio, since gh-pages needs the url to be /portfolio
+//     children: [
+//       {
+//         path: 'info',
+//         element: <InfoView />,
+//       },
+//     ],
+//   },
+// ];
+
 /**
  * 
  * 
