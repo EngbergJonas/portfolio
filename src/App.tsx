@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import LanguageToggler from './components/LanguageHandler/LanguageHandler';
-import { InfoView } from './views';
-import { Route, Routes } from 'react-router-dom';
+// import { InfoView } from './views';
+// import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const App = () => {
@@ -14,9 +14,9 @@ const App = () => {
       </header>
       <LanguageToggler />
       <Link to="info">Link to info page</Link>
-      <Routes>
+      {/* <Routes>
         <Route path="/info" element={<InfoView />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 };

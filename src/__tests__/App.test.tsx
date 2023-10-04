@@ -1,6 +1,6 @@
 import { renderWithRouter } from '../utils/testUtils';
 
-describe.skip('App', () => {
+describe('App', () => {
   it('renders App', () => {
     const { getByTestId } = renderWithRouter();
     expect(getByTestId('app-view')).toBeInTheDocument();
