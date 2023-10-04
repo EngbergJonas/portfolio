@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import App from '../App';
 import { ErrorView, InfoView } from '../views';
 
@@ -6,17 +6,25 @@ import { ErrorView, InfoView } from '../views';
 export const routesConfig = [
   {
     path: '/',
-    element: (
-      <>
-        <App />
-        <Outlet />
-      </>
-    ),
+    element: <Outlet />,
     errorElement: <ErrorView />,
+    // Redirect / to /portfolio, since gh-pages needs the url to be /portfolio
     children: [
+      { index: true, element: <Navigate to="/portfolio" replace /> },
       {
-        path: '/info',
-        element: <InfoView />,
+        path: 'portfolio',
+        element: (
+          <>
+            <App />
+            <Outlet />
+          </>
+        ),
+        children: [
+          {
+            path: 'info',
+            element: <InfoView />,
+          },
+        ],
       },
     ],
   },
