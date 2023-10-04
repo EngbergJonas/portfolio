@@ -6,13 +6,37 @@ import { ErrorView, InfoView } from '../views';
 export const routesConfig = [
   {
     path: '/',
+    element: (
+      <>
+        <App />
+        <Outlet />
+      </>
+    ),
+    errorElement: <ErrorView />,
+    // Redirect / to /portfolio, since gh-pages needs the url to be /portfolio
+    children: [
+      {
+        path: 'info',
+        element: <InfoView />,
+      },
+    ],
+  },
+];
+
+/**
+ * 
+ * 
+ * // Define app routes here, used by index.tsx and testUtils.tsx
+export const routesConfig = [
+  {
+    path: '/',
     element: <Outlet />,
     errorElement: <ErrorView />,
     // Redirect / to /portfolio, since gh-pages needs the url to be /portfolio
     children: [
-      { index: true, element: <Navigate to="/portfolio" replace /> },
+      { index: true, element: <Navigate to="/home" replace /> },
       {
-        path: 'portfolio',
+        path: 'home',
         element: (
           <>
             <App />
@@ -29,3 +53,5 @@ export const routesConfig = [
     ],
   },
 ];
+
+ */

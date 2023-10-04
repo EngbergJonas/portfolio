@@ -7,7 +7,7 @@ export const user = userEvent.setup();
 
 // Custom render function for tests to be able to render the configured routes
 export const renderWithRouter = (route = '') => {
-  window.history.pushState({}, 'Test page', `#/portfolio/${route}`);
+  window.history.pushState({}, 'Test page', `/#/${route}`);
 
   return {
     user,
