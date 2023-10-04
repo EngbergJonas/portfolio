@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { /*Navigate,*/ Outlet } from 'react-router-dom';
 import App from '../App';
 import { ErrorView, InfoView } from '../views';
 
