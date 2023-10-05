@@ -1,10 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them and run tests
-name: Install Build and Test
+name: Build and Test
 
 on:
-  push:
-    branches: ['main']
-
   pull_request:
     branches: ['main']
 
@@ -34,10 +31,3 @@ jobs:
 
       - name: Test 🧪
         run: npm test
-
-      - name: Deploy 🚀
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
