@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import jonas from '../../assets/jonas.jpg';
 import signature from '../../assets/signature.svg';
+import './styles.css';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -15,7 +16,12 @@ const Hero = () => {
           <img data-testid="signature-image" className="h-[8rem]" src={signature} alt="signature" />
         </div>
         {/* hero image */}
-        <img data-testid="hero-image" className="scale-x-[-1] w-auto" src={jonas} alt="jonas" />
+        <img
+          data-testid="hero-image"
+          className="scale-x-[-1] w-auto fade-in"
+          src={jonas}
+          alt="jonas"
+        />
       </div>
     </header>
   );
