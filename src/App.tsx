@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div data-testid="app-view">
       <header className="my-6 flex flex-col w-full items-center">
-        <h1 className="text-6xl font-bold">{t('app.title')}</h1>
+        <h1 className="text-5xl font-bold">{t('app.title')}</h1>
       </header>
       <LanguageToggler />
       <Link to="info">Link to info page</Link>

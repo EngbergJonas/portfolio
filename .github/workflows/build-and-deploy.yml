@@ -2,6 +2,7 @@
 name: Build and Deploy
 
 on:
+  # This job gets triggered on pushes to main
   push:
     branches: ['main']
 
