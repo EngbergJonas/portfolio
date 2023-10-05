@@ -12,7 +12,7 @@ const Hero = () => {
           <h1 className="text-7xl font-medium w-full mb-2">{t('app.title')}</h1>
           <h2 className="text-2xl font-medium ">{t('app.subtitle')}</h2>
           <p className="text-xl my-[4rem] max-w-[54rem]">{t('app.textContent')}</p>
-          <img data-testid="signature-image" src={signature} alt="signature" />
+          <img data-testid="signature-image" className="h-[8rem]" src={signature} alt="signature" />
         </div>
         {/* hero image */}
         <img data-testid="hero-image" className="scale-x-[-1] w-auto" src={jonas} alt="jonas" />
