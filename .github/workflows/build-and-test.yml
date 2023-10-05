@@ -2,6 +2,7 @@
 name: Build and Test
 
 on:
+  # This job gets triggered on pull requests
   pull_request:
     branches: ['main']
 
