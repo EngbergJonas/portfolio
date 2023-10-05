@@ -13,6 +13,8 @@ jobs:
       matrix:
         node-version: [20.x]
 
+    name: Build and Deploy
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
