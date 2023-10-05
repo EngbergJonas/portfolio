@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-lato;
+  @apply font-lato bg-[#e4e3e3] m-0 p-0 overflow-x-hidden max-w-[100vw] w-screen;
 }
 
 h1,

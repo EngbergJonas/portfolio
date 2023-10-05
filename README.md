@@ -24,12 +24,6 @@ The app uses [react-router-dom v6's](https://reactrouter.com/en/main) [createBro
 
 The app follows a workaround provided by [rafgraph's spa-github-pages](https://github.com/rafgraph/spa-github-pages), since the browser router doesn't work by default on GitHub Pages, since it doesn't support the [DOM History API](https://developer.mozilla.org/en-US/docs/Web/API/History).
 
-- Eslint: code validity
-- Prettier: code formatting
-- TailwindCSS: css helper library
-- React Router: routes
-- i18next: localization
-
 ## Testing
 
 The app uses [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit tests. Each test can be found under a `__tests__` folder in the same path as the component being tested. Helpers for tests are written in the [testUtils.ts](src/utils/testUtils.tsx) file.
