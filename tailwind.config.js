@@ -5,6 +5,20 @@ export const theme = {
     lato: ['Lato', 'sans-serif'],
     raleway: ['Raleway', 'sans-serif'],
   },
-  extend: {},
+  extend: {
+    keyframes: {
+      appear: {
+        '0%': {
+          opacity: 0,
+        },
+        '100%': {
+          opacity: 1,
+        },
+      },
+    },
+    animation: {
+      appear: 'appear 1s ease-in-out',
+    },
+  },
 };
 export const plugins = [];

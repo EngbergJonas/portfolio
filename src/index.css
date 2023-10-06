@@ -12,3 +12,16 @@ h3,
 h4 {
   @apply font-raleway;
 }
+
+/* margin class to be used by app views */
+.app-margin {
+  @apply mx-8 lg:mx-16 xl:mx-20;
+}
+
+/* these title classes could be changed later */
+.header-xxl {
+  @apply text-4xl sm:text-5xl md:text-6xl;
+}
+.header-base {
+  @apply text-lg sm:text-2xl;
+}

@@ -7,14 +7,13 @@ describe('Hero', () => {
 
     expect(getByTestId('hero')).toBeInTheDocument();
 
-    const heroText = getByTestId(`hero-text`);
+    const heroInfo = getByTestId(`hero-info`);
 
-    expect(heroText).toBeInTheDocument();
-    expect(heroText.children[0]).toHaveTextContent('app.title');
-    expect(heroText.children[1]).toHaveTextContent('app.subtitle');
-    expect(heroText.children[2]).toHaveTextContent('app.textContent');
+    expect(heroInfo).toBeInTheDocument();
+    expect(heroInfo.children[0]).toHaveTextContent('hero.title');
+    expect(heroInfo.children[1]).toHaveTextContent('hero.subtitle');
+    expect(heroInfo.children[2]).toHaveTextContent('hero.textContent');
 
     expect(getByTestId(`hero-image`)).toBeInTheDocument();
-    expect(getByTestId('signature-image')).toBeInTheDocument();
   });
 });
