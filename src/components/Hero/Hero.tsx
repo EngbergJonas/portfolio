@@ -5,7 +5,7 @@ import signature from '../../assets/signature.svg';
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <header data-testid="hero" className="app-margin h-screen relative pt-10 sm:pt-20">
+    <header data-testid="hero" className="app-margin h-[100dvh] relative pt-10 sm:pt-20">
       <div data-testid="hero-info" className="z-10 relative">
         <h1 className="header-xxl font-medium sm:mb-2">{t('hero.title')}</h1>
         <h2 className="header-base font-medium mb-2">{t('hero.subtitle')}</h2>
