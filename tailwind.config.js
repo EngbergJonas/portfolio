@@ -17,7 +17,9 @@ export const theme = {
       },
     },
     animation: {
-      appear: 'appear 1s ease-in-out',
+      'appear-fast': 'appear 1s ease-in-out',
+      'appear-medium': 'appear 1.5s ease-in-out',
+      'appear-slow': 'appear 2s ease-in-out',
     },
   },
 };
