@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 import LanguageHandler from '../LanguageHandler';
-import { languages } from '../../../interfaces/languageInterfaces';
 import { user } from '../../../utils/testUtils';
+import { languages } from '../../../utils/common';
 
 describe('LanguageHandler', () => {
   it('renders LanguageHandler and has English as default language', () => {

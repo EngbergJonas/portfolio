@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import LanguageButton from './LanguageButton';
-import { Language, languages } from '../../interfaces/languageInterfaces';
 import { useTranslation } from 'react-i18next';
+import { Language } from '../../interfaces/common';
+import { languages } from '../../utils/common';
 
 const LanguageToggler = () => {
   const {
@@ -16,7 +17,7 @@ const LanguageToggler = () => {
   }, [language]);
 
   return (
-    <div data-testid="language-handler" className="flex flex-row gap-2">
+    <div data-testid="language-handler" className="flex hidden flex-row gap-2">
       {languages.map((l) => (
         <LanguageButton key={l} language={l} onClick={setLanguage} />
       ))}
