@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-lato bg-[#e4e3e3] m-0 p-0 overflow-x-hidden max-w-[100vw] w-screen;
+  @apply m-0 w-screen max-w-[100vw] overflow-x-hidden bg-navy p-0 font-lato text-slate;
 }
 
 h1,
@@ -20,8 +20,23 @@ h4 {
 
 /* these title classes could be changed later */
 .header-xxl {
-  @apply text-4xl sm:text-5xl md:text-6xl;
+  @apply text-4xl font-bold text-slate-l sm:text-6xl md:text-7xl;
 }
+
 .header-base {
-  @apply text-lg sm:text-2xl;
+  @apply text-xl font-bold sm:text-2xl;
+}
+
+/* Change text selection color (firefox) */
+::-moz-selection {
+  @apply bg-green text-navy;
+}
+
+/* Change text selection color */
+::selection {
+  @apply bg-green text-navy;
+}
+
+*:focus-visible {
+  @apply outline-dashed outline-2 outline-offset-[8px] outline-green;
 }

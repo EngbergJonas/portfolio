@@ -17,7 +17,7 @@ const LanguageToggler = () => {
   }, [language]);
 
   return (
-    <div data-testid="language-handler" className="flex flex-row gap-2">
+    <div data-testid="language-handler" className="flex hidden flex-row gap-2">
       {languages.map((l) => (
         <LanguageButton key={l} language={l} onClick={setLanguage} />
       ))}

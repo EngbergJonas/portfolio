@@ -1,8 +1,9 @@
 {
   "hero": {
-    "title": "Jonas Engberg",
-    "subtitle": "Sovelluskehittäjä",
-    "textContent": "I'm a full stack developer with an emphasis on the front end. I'm passionate about designing and implementing front and back-end interfaces. I enjoy staying up to date with the newest technologies and I'm always looking to improve my practices."
+    "title": "Jonas Engberg.",
+    "subtitle": "Sovelluskehittäjä.",
+    "textContent": "I'm a full stack developer with an emphasis on the front end. I'm passionate about designing and implementing front and back-end interfaces. I enjoy staying up to date with the newest technologies and I'm always looking to improve my practices.",
+    "aboutMe": "Minusta"
   },
   "error": {
     "title": "404 sivua ei löytynyt"

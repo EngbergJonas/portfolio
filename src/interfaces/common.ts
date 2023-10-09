@@ -8,4 +8,5 @@ export interface IconLinkProps {
   label: string;
   href: string;
   color?: string;
+  hoverColor?: string;
 }

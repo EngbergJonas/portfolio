@@ -19,9 +19,9 @@ describe('IconLink', () => {
     expect(iconLink.target).toBe('_blank');
     expect(iconLink.rel).toBe('noreferrer');
 
-    const iconLinkIcon = getByTestId('icon-link-icon');
+    const iconLinkIcon = getByTestId('test link');
 
-    expect(iconLinkIcon.classList.contains('test-color')).toBeTruthy();
-    expect(iconLinkIcon.classList.contains('text-xl')).toBeTruthy();
+    expect(iconLinkIcon.classList.contains('text-test-color')).toBeTruthy();
+    expect(iconLinkIcon.classList.contains('text-2xl')).toBeTruthy();
   });
 });
