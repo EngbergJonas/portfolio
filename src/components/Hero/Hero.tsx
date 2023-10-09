@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import jonas from '../../assets/jonas.jpg';
+import jonas from '../../assets/jonas.png';
 import signature from '../../assets/signature.svg';
 
 const Hero = () => {

@@ -1,14 +1,14 @@
 import { FC, SetStateAction, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Language } from '../../interfaces/languageInterfaces';
+import { Language } from '../../interfaces/common';
 import './styles.css';
 
-interface ILanguageButtonProps {
+interface LanguageButtonProps {
   language: Language;
   onClick: (value: SetStateAction<Language>) => void;
 }
 
-const LanguageButton: FC<ILanguageButtonProps> = ({ language, onClick }) => {
+const LanguageButton: FC<LanguageButtonProps> = ({ language, onClick }) => {
   const {
     t,
     i18n: { language: currentLanguage },

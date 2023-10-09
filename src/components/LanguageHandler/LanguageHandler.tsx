@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import LanguageButton from './LanguageButton';
-import { Language, languages } from '../../interfaces/languageInterfaces';
 import { useTranslation } from 'react-i18next';
+import { Language } from '../../interfaces/common';
+import { languages } from '../../utils/common';
 
 const LanguageToggler = () => {
   const {
