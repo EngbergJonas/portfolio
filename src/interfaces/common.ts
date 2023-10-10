@@ -10,3 +10,5 @@ export interface IconLinkProps {
   color?: string;
   hoverColor?: string;
 }
+
+export type ScrollDirection = 'up' | 'down';

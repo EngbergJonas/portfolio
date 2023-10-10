@@ -32,12 +32,32 @@ export const theme = {
           'animation-timing-function': 'cubic-bezier(0,0,0.2,1)',
         },
       },
+      'move-up': {
+        '0%': {
+          transform: 'translateY(0px)',
+        },
+        '100%': {
+          transform: 'translateY(-100px)',
+          display: 'hidden',
+        },
+      },
+      'move-down': {
+        '0%': {
+          transform: 'translateY(-100px)',
+        },
+        '100%': {
+          transform: 'translateY(0px)',
+          display: 'flex',
+        },
+      },
     },
     animation: {
       'appear-fast': 'appear 1s ease-in-out',
       'appear-medium': 'appear 1.5s ease-in-out',
       'appear-slow': 'appear 2s ease-in-out',
       'bounce-right': 'bounce-right 1s infinite',
+      'move-up': 'move-up 0.5s ease-in-out',
+      'move-down': 'move-down 0.5s ease-in-out',
     },
   },
 };

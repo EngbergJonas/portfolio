@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import Hero from '../Hero';
 import { someLinks } from '../../../utils/common';
+import { user } from '../../../utils/testUtils';
 
 describe('Hero', () => {
   it('renders the info section', () => {
@@ -33,9 +34,17 @@ describe('Hero', () => {
     });
   });
 
-  it('renders the hero image', () => {
+  it('renders the hero image and its outline and has an animation when hovered', async () => {
     const { getByTestId } = render(<Hero />);
+    const heroImage = getByTestId('hero-image');
+    const heroImageOutline = getByTestId('hero-image-outline');
 
-    expect(getByTestId(`hero-image`)).toBeInTheDocument();
+    expect(heroImage).toBeInTheDocument();
+    expect(heroImageOutline).toBeInTheDocument();
+
+    await user.hover(heroImage);
+
+    expect(heroImageOutline.classList.contains('fill-slate-l'));
+    expect(heroImageOutline.classList.contains('stroke-slate-l'));
   });
 });

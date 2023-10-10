@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import jonas from '../../assets/jonas.png';
+import { ReactComponent as Outline } from '../../assets/jonas_outline.svg';
 import { someLinks } from '../../utils/common';
 import IconLink from '../IconLink/IconLink';
 import { FaArrowRight } from 'react-icons/fa6';
@@ -8,8 +9,10 @@ import './styles.css';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const heroImageStyles =
+    'absolute bottom-0 right-0 z-10 h-[50%] scale-x-[-1] animate-appear-fast sm:h-[60%] lg:h-[80%] duration-700';
   return (
-    <header data-testid="hero" className="app-margin relative h-[100dvh] py-10 pb-14 sm:py-20">
+    <header data-testid="hero" className="app-margin relative h-[100dvh] pb-14 pt-24 sm:py-24">
       <div
         data-testid="hero-info-section"
         className="item-start relative z-10 flex h-full flex-col sm:justify-between"
@@ -51,11 +54,11 @@ const Hero = () => {
         </div>
       </div>
       {/* Hero Image */}
-      <img
-        data-testid="hero-image"
-        className="absolute bottom-0 right-0 h-[50%] scale-x-[-1] animate-appear-fast sm:h-[60%] lg:h-[80%]"
-        src={jonas}
-        alt="jonas"
+      <img data-testid="hero-image" className={`${heroImageStyles} peer`} src={jonas} alt="jonas" />
+      {/* Hero Image Outline */}
+      <Outline
+        data-testid="hero-image-outline"
+        className={`${heroImageStyles} !z-0 translate-x-2 translate-y-1 !fill-green !stroke-green sm:translate-x-3 sm:peer-hover:translate-x-6 sm:peer-hover:!fill-slate-l sm:peer-hover:!stroke-slate-l`}
       />
     </header>
   );

@@ -1,0 +1,38 @@
+.menu-button,
+.menu-button-open {
+  @apply relative flex h-[50px] w-10 cursor-pointer items-center justify-end transition-all duration-500 sm:hidden;
+}
+
+.menu-button-burger {
+  @apply h-[3px] w-[85%] rounded-md bg-green transition-all duration-500;
+}
+
+/* create two the burger lines above and under the first one */
+.menu-button-burger::before,
+.menu-button-burger::after {
+  @apply absolute right-0 mx-auto h-[3px] rounded-md bg-green transition-all duration-500 content-[''];
+}
+
+.menu-button-burger::before {
+  @apply w-full -translate-y-3;
+}
+
+.menu-button-burger::after {
+  @apply w-[70%] translate-y-3;
+}
+
+/* animations when open class gets toggled */
+.menu-button-open .menu-button-burger {
+  @apply bg-transparent;
+}
+
+/* rotate the upper line back in place in a 45 degree angle*/
+.menu-button-open .menu-button-burger::before {
+  transform: rotate(45deg);
+  @apply w-full;
+}
+
+.menu-button-open .menu-button-burger::after {
+  transform: rotate(-45deg);
+  @apply w-full;
+}
