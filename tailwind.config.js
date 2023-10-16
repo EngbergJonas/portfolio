@@ -9,6 +9,7 @@ export const theme = {
     colors: {
       green: '#64ffda',
       navy: '#0a192f',
+      'navy-l': '#112240',
       'navy-d': '#020c1b',
       slate: '#8892b0',
       'slate-l': '#ccd6f6',

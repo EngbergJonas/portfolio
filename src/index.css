@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply m-0 w-screen max-w-[100vw] overflow-x-hidden bg-navy p-0 font-lato text-slate;
+  @apply m-0 w-full overflow-x-hidden bg-navy p-0 font-lato text-slate;
 }
 
 h1,
@@ -15,7 +15,7 @@ h4 {
 
 /* margin class to be used by app views */
 .app-margin {
-  @apply mx-8 lg:mx-16 xl:mx-20;
+  @apply mx-8 md:mx-16 xl:mx-20;
 }
 
 /* these title classes could be changed later */
@@ -39,4 +39,17 @@ h4 {
 
 *:focus-visible {
   @apply outline-dashed outline-2 outline-offset-[8px] outline-green;
+}
+
+.animate-bottom-border::after {
+  transition: width 250ms;
+  @apply block h-[2px] w-0 bg-green content-[''];
+}
+
+.animate-bottom-border:hover:after {
+  @apply w-full;
+}
+
+.animate-bottom-border:focus:after {
+  @apply w-full;
 }

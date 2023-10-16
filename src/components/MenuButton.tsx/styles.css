@@ -1,6 +1,6 @@
 .menu-button,
 .menu-button-open {
-  @apply relative flex h-[50px] w-10 cursor-pointer items-center justify-end transition-all duration-500 sm:hidden;
+  @apply relative flex h-[50px] w-10 cursor-pointer items-center justify-end transition-all duration-500;
 }
 
 .menu-button-burger {

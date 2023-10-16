@@ -9,6 +9,12 @@ export interface IconLinkProps {
   href: string;
   color?: string;
   hoverColor?: string;
+  size?: string;
 }
 
 export type ScrollDirection = 'up' | 'down';
+
+export interface NavigationLink {
+  to: string;
+  label: string;
+}

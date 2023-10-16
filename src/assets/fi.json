@@ -15,5 +15,11 @@
     "en": "English",
     "fi": "Suomeksi",
     "sv": "Svenska"
+  },
+  "navigation": {
+    "about": "Minusta",
+    "experiences": "Kokemuksia",
+    "resume": "Ansioluettelo",
+    "contact": "Ota yhteyttä"
   }
 }

@@ -9,10 +9,15 @@ import './styles.css';
 
 const Hero = () => {
   const { t } = useTranslation();
+
   const heroImageStyles =
-    'absolute bottom-0 right-0 z-10 h-[50%] scale-x-[-1] animate-appear-fast sm:h-[60%] lg:h-[80%] duration-700';
+    'absolute bottom-0 right-0 z-10 h-[45%] scale-x-[-1] animate-appear-fast sm:h-[60%] lg:h-[80%] duration-700 mr-8 md:mr-16 xl:mr-20';
+
   return (
-    <header data-testid="hero" className="app-margin relative h-[100dvh] pb-14 pt-24 sm:py-24">
+    <header
+      data-testid="hero"
+      className=" relative h-[100dvh] overflow-hidden px-8 pb-14 pt-24 sm:pt-32 md:px-16 xl:px-20"
+    >
       <div
         data-testid="hero-info-section"
         className="item-start relative z-10 flex h-full flex-col sm:justify-between"

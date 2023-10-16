@@ -15,5 +15,11 @@
     "en": "English",
     "fi": "Suomeksi",
     "sv": "Svenska"
+  },
+  "navigation": {
+    "about": "About",
+    "experiences": "Experiences",
+    "resume": "Resume",
+    "contact": "Contact"
   }
 }

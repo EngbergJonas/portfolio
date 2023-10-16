@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa6';
-import { IconLinkProps } from '../interfaces/common';
+import { IconLinkProps, NavigationLink } from '../interfaces/common';
 
 export const someLinks: Array<IconLinkProps> = [
   {
@@ -20,3 +20,22 @@ export const someLinks: Array<IconLinkProps> = [
 ];
 
 export const languages = ['en', 'fi', 'sv'] as const;
+
+export const navigationLinks: Array<NavigationLink> = [
+  {
+    to: '/#',
+    label: 'about',
+  },
+  {
+    to: '/#',
+    label: 'experiences',
+  },
+  {
+    to: '/#',
+    label: 'resume',
+  },
+  {
+    to: '/#',
+    label: 'contact',
+  },
+];

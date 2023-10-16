@@ -2,14 +2,16 @@ import { FC, useMemo } from 'react';
 import { IconLinkProps } from '../../interfaces/common';
 
 /**
- * Pass colors from tailwind
+ * Pass colors and size from tailwind (size uses tailwind fontSize)
  */
-const IconLink: FC<IconLinkProps> = ({ Icon, label, href, color, hoverColor }) => {
+const IconLink: FC<IconLinkProps> = ({ Icon, label, href, color, hoverColor, size }) => {
   const colorClass = useMemo(() => (color ? `text-${color}` : ''), [color]);
   const hoverColorClass = useMemo(
     () => (hoverColor ? `hover:text-${hoverColor} group-focus:text-${hoverColor}` : ''),
     [hoverColor],
   );
+  const textClass = useMemo(() => (size ? `text-${size}` : 'text-2xl'), [size]);
+
   return (
     <a
       data-testid="icon-link"
@@ -19,7 +21,7 @@ const IconLink: FC<IconLinkProps> = ({ Icon, label, href, color, hoverColor }) =
       rel="noreferrer"
       aria-label={label}
     >
-      <Icon data-testid={label} className={`text-2xl ${colorClass} ${hoverColorClass}`} />
+      <Icon data-testid={label} className={`${textClass} ${colorClass} ${hoverColorClass}`} />
     </a>
   );
 };
