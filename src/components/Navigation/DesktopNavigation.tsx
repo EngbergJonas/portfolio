@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { navigationLinks } from '../../../utils/common';
-import NavigationItem from '../NavigationItem';
+import { navigationLinks } from '../../utils/common';
+import NavigationItem from './NavigationItem';
 import SettingsModal from './SettingsModal';
 import { useState } from 'react';
 import { FaCog } from 'react-icons/fa';

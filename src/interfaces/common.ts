@@ -18,3 +18,8 @@ export interface NavigationLink {
   to: string;
   label: string;
 }
+
+export interface Option {
+  name: string;
+  value: string;
+}

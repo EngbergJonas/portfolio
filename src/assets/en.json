@@ -21,5 +21,13 @@
     "experiences": "Experiences",
     "resume": "Resume",
     "contact": "Contact"
+  },
+  "settingsModal": {
+    "title": "Settings",
+    "titleTooltip": "Personalize your experience",
+    "mode": "Mode",
+    "modeSwitchLabel": "Toggle between dark and light mode",
+    "language": "Language",
+    "languageTooltip": "Select your preferred language"
   }
 }

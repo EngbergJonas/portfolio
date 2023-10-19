@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <header
       data-testid="hero"
-      className=" relative h-[100dvh] overflow-hidden px-8 pb-14 pt-24 sm:pt-32 md:px-16 xl:px-20"
+      className="relative h-[100dvh] overflow-hidden px-8 pb-14 pt-24 sm:pt-32 md:px-16 xl:px-20"
     >
       <div
         data-testid="hero-info-section"
@@ -26,7 +26,7 @@ const Hero = () => {
           </h2>
           <p
             className="my-6 w-full animate-appear-slow text-base sm:my-10 sm:text-xl 
-          md:w-[30rem] lg:w-[34rem] xl:w-[50rem]"
+              md:w-[30rem] lg:w-[34rem] xl:w-[50rem]"
           >
             {t('hero.textContent')}
           </p>
@@ -36,14 +36,14 @@ const Hero = () => {
             data-testid="about-me-button"
             aria-label="about me"
             className="text-slate-xl group mb-6 flex animate-appear-slow items-center 
-            justify-center gap-4 text-lg sm:mb-10 sm:text-xl"
+              justify-center gap-4 text-lg sm:mb-10 sm:text-xl"
           >
             <span className="animate-bottom-border group-hover:after:w-full group-focus:after:w-full">
               {t('hero.aboutMe')}
             </span>
             <FaArrowRight
               className="text-slate-xl text-xl group-hover:text-green 
-              group-focus:text-green sm:text-2xl"
+                group-focus:text-green sm:text-2xl"
             />
           </button>
 
