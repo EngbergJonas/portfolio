@@ -6,11 +6,6 @@ describe('App', () => {
     expect(getByTestId('app-view')).toBeInTheDocument();
   });
 
-  it('renders LanguageHandler', () => {
-    const { getByTestId } = renderWithRouter();
-    expect(getByTestId('language-handler')).toBeInTheDocument();
-  });
-
   describe('routes', () => {
     it('does not render InfoView if the route is not /info', () => {
       const { queryByTestId } = renderWithRouter();

@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../../../App';
 import { user } from '../../../utils/testUtils';
@@ -22,7 +22,7 @@ describe('Navigation', () => {
       </BrowserRouter>,
     );
 
-    expect(getByTestId('menu-button')).toBeInTheDocument();
+    expect(getByTestId('menu-button-closed')).toBeInTheDocument();
   });
 
   it('renders the language select modal', async () => {
@@ -34,18 +34,19 @@ describe('Navigation', () => {
     );
 
     // Language modal doesn't exist
-    expect(queryByTestId('language-selection-modal')).toBeNull();
+    expect(queryByTestId('settings-modal')).toBeNull();
 
-    const languageSelectionButton = getByTestId('language-selection-button');
+    const settingsModalButton = getByTestId('settings-button');
 
     // Open language modal
-    await act(async () => await user.click(languageSelectionButton));
+    await act(async () => await user.click(settingsModalButton));
 
-    expect(getByTestId('language-selection-modal')).toBeInTheDocument();
+    expect(getByTestId('settings-modal')).toBeInTheDocument();
 
     // Close language modal
-    await act(async () => await user.click(getByLabelText('close language selection')));
+    await act(async () => await user.click(getByLabelText('close settings')));
 
-    expect(queryByTestId('language-selection-modal')).toBeNull();
+    // Wait for modal to close (has a 300ms timeout)
+    await waitFor(() => expect(queryByTestId('settings-modal')).toBeNull());
   });
 });

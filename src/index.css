@@ -20,36 +20,80 @@ h4 {
 
 /* these title classes could be changed later */
 .header-xxl {
-  @apply text-4xl font-bold text-slate-l sm:text-6xl md:text-7xl;
+  @apply text-slate-xl text-4xl font-bold sm:text-6xl md:text-7xl;
 }
 
 .header-base {
   @apply text-xl font-bold sm:text-2xl;
 }
 
-/* Change text selection color (firefox) */
+/* change text selection color (firefox) */
 ::-moz-selection {
   @apply bg-green text-navy;
 }
 
-/* Change text selection color */
+/* change text selection color */
 ::selection {
   @apply bg-green text-navy;
 }
 
+/* custom focus styles */
 *:focus-visible {
   @apply outline-dashed outline-2 outline-offset-[8px] outline-green;
 }
 
+/* animated bottom border for hovering text */
 .animate-bottom-border::after {
   transition: width 250ms;
   @apply block h-[2px] w-0 bg-green content-[''];
 }
-
 .animate-bottom-border:hover:after {
   @apply w-full;
 }
-
 .animate-bottom-border:focus:after {
   @apply w-full;
+}
+
+/* react modal needs styles applied like this for animating */
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 300ms ease-in;
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+/* hero image used on hero component */
+.hero-image {
+  @apply absolute bottom-0 right-0 z-10 mr-8 h-[45%] scale-x-[-1] 
+  animate-appear-fast duration-700 sm:h-[60%] md:mr-16 lg:h-[80%] xl:mr-20;
+}
+
+/* menu buttons burger styles */
+.menu-burger-closed {
+  @apply bg-green after:w-[70%];
+}
+.menu-burger-open {
+  @apply before:!translate-y-0 before:rotate-45 after:w-full after:!translate-y-0 after:-rotate-45;
+}
+
+/* radio button types */
+.radio-button-checkmark {
+  @apply before:absolute before:hidden before:h-6 
+    before:w-1 before:-translate-y-[5px] before:translate-x-[15px] before:rotate-45
+    before:rounded-sm before:bg-green before:content-[''] after:absolute
+    after:top-2 after:hidden after:h-3 after:w-1 after:-translate-y-[2.7px]
+    after:translate-x-[5px] after:-rotate-45  after:rounded-sm after:bg-green 
+    after:content-[''] peer-checked:before:block peer-checked:after:block;
+}
+.radio-button-bullet {
+  @apply before:absolute before:left-[3px] before:top-[3px] 
+    before:hidden before:h-[14px] before:w-[14px] before:rounded-full 
+    before:bg-green before:content-[''] before:peer-checked:block;
 }

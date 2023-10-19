@@ -2,30 +2,60 @@ import { act, render } from '@testing-library/react';
 import { user } from '../../../utils/testUtils';
 import MenuButton from '../MenuButton';
 
+const ui = <MenuButton onClick={() => null} label={'test-menu-button'} />;
+
 describe('MenuButton', () => {
   it('renders all the elements a', () => {
-    const { getByTestId, getByLabelText } = render(
-      <MenuButton onClick={() => null} label={'test-menu-button'} />,
-    );
+    const { getByTestId, getByLabelText } = render(ui);
 
-    expect(getByTestId('menu-button')).toBeInTheDocument();
+    expect(getByTestId('menu-button-closed')).toBeInTheDocument();
     expect(getByTestId('burger')).toBeInTheDocument();
     expect(getByLabelText('test-menu-button')).toBeInTheDocument();
   });
 
-  it('has the closed css class by default', () => {
-    const { getByTestId } = render(<MenuButton onClick={() => null} label={'test-menu-button'} />);
+  it('is closed by default', () => {
+    const { getByTestId } = render(ui);
 
-    expect(getByTestId('menu-button').classList.contains('menu-button')).toBeTruthy();
-    expect(getByTestId('menu-button').classList.contains('menu-button-open')).toBeFalsy();
+    expect(getByTestId('menu-button-closed')).toBeInTheDocument();
   });
 
-  it('toggles the open css class when clicked', async () => {
-    const { getByTestId } = render(<MenuButton onClick={() => null} label={'test-menu-button'} />);
+  it('is opened if the defaultOpen prop is given', () => {
+    const { getByTestId } = render(
+      <MenuButton onClick={() => null} label={'test-menu-button'} defaultOpen={true} />,
+    );
 
-    await act(async () => await user.click(getByTestId('menu-button')));
+    expect(getByTestId('menu-button-open')).toBeInTheDocument();
+  });
 
-    expect(getByTestId('menu-button').classList.contains('menu-button')).toBeFalsy();
-    expect(getByTestId('menu-button').classList.contains('menu-button-open')).toBeTruthy();
+  it('is medium sized by default', () => {
+    const { getByTestId } = render(ui);
+
+    expect(getByTestId('menu-button-closed').classList.contains('h-10')).toBeTruthy();
+  });
+
+  it("is small when size prop 'sm' is given", () => {
+    const { getByTestId } = render(
+      <MenuButton onClick={() => null} label={'test-menu-button'} size="sm" />,
+    );
+
+    expect(getByTestId('menu-button-closed').classList.contains('h-6')).toBeTruthy();
+  });
+
+  it('changes the opened state when clicked', async () => {
+    const { getByTestId } = render(ui);
+
+    await act(async () => await user.click(getByTestId('menu-button-closed')));
+
+    expect(getByTestId('menu-button-open')).toBeInTheDocument();
+  });
+
+  it("doesn't change the opened state if animate prop is false", async () => {
+    const { getByTestId } = render(
+      <MenuButton onClick={() => null} label={'test-menu-button'} animate={false} />,
+    );
+
+    await act(async () => await user.click(getByTestId('menu-button-closed')));
+
+    expect(getByTestId('menu-button-closed')).toBeInTheDocument();
   });
 });

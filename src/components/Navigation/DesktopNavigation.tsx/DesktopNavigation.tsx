@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { navigationLinks } from '../../../utils/common';
 import NavigationItem from '../NavigationItem';
-import LanguageModal from './LanguageModal';
+import SettingsModal from './SettingsModal';
 import { useState } from 'react';
-import { FaLanguage } from 'react-icons/fa6';
+import { FaCog } from 'react-icons/fa';
 
 const DesktopNavigation = () => {
   const { t } = useTranslation();
 
-  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
 
-  const toggleLanguageModal = () => {
-    setIsLanguageModalOpen((current) => {
+  const toggleSettingsModal = () => {
+    setIsSettingsModalOpen((current) => {
       // disable scrolling when opening modal
       document.body.style.overflow = !current ? 'hidden' : 'visible';
       return !current;
@@ -20,20 +20,23 @@ const DesktopNavigation = () => {
 
   return (
     <div className="hidden h-[2.5rem] justify-center sm:flex">
-      <ul className="flex h-full items-center gap-10 text-lg text-slate-l">
+      {/* nav items */}
+      <ul className="text-slate-xl flex h-full items-center gap-10 text-lg">
         {navigationLinks.map(({ label, to }) => (
           <NavigationItem key={label} label={t(`navigation.${label}`)} to={to} />
         ))}
       </ul>
+      {/* settings modal open button */}
       <button
-        data-testid="language-selection-button"
-        aria-label="open language selection menu"
+        data-testid="settings-button"
+        aria-label="settings menu"
         className="group ml-10 flex items-center justify-end"
-        onClick={toggleLanguageModal}
+        onClick={toggleSettingsModal}
       >
-        <FaLanguage className="text-5xl hover:cursor-pointer hover:text-green group-focus:text-green" />
+        <FaCog className="text-4xl hover:cursor-pointer hover:text-green group-focus:text-green" />
       </button>
-      <LanguageModal isOpen={isLanguageModalOpen} toggleModal={toggleLanguageModal} />
+      {/* settings modal */}
+      <SettingsModal isOpen={isSettingsModalOpen} toggleModal={toggleSettingsModal} />
     </div>
   );
 };

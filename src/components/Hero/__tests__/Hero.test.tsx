@@ -44,7 +44,7 @@ describe('Hero', () => {
 
     await user.hover(heroImage);
 
-    expect(heroImageOutline.classList.contains('fill-slate-l'));
-    expect(heroImageOutline.classList.contains('stroke-slate-l'));
+    expect(heroImageOutline.classList.contains('fill-slate-xl'));
+    expect(heroImageOutline.classList.contains('stroke-slate-xl'));
   });
 });

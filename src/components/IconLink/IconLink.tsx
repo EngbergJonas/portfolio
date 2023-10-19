@@ -6,11 +6,13 @@ import { IconLinkProps } from '../../interfaces/common';
  */
 const IconLink: FC<IconLinkProps> = ({ Icon, label, href, color, hoverColor, size }) => {
   const colorClass = useMemo(() => (color ? `text-${color}` : ''), [color]);
+
+  const textClass = useMemo(() => (size ? `text-${size}` : 'text-2xl'), [size]);
+
   const hoverColorClass = useMemo(
     () => (hoverColor ? `hover:text-${hoverColor} group-focus:text-${hoverColor}` : ''),
     [hoverColor],
   );
-  const textClass = useMemo(() => (size ? `text-${size}` : 'text-2xl'), [size]);
 
   return (
     <a

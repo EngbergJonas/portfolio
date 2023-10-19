@@ -11,7 +11,7 @@ describe('MobileBanner', () => {
     someLinks.forEach((sl) => {
       const someLink = getByTestId(sl.label);
       expect(someLink).toBeInTheDocument();
-      expect(someLink.classList.contains('text-slate-l')).toBeTruthy();
+      expect(someLink.classList.contains('text-slate-xl')).toBeTruthy();
     });
   });
 });

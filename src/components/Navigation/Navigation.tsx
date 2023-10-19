@@ -34,7 +34,7 @@ const Navigation = () => {
     >
       {/* Logo (always visible) */}
       <Link className="group flex h-[2.5rem] justify-center" aria-label="navigate home" to="/">
-        <Logo className="h-full w-full !fill-slate-l hover:!fill-green group-focus:!fill-green" />
+        <Logo className="!fill-slate-xl h-full w-full hover:!fill-green group-focus:!fill-green" />
       </Link>
       {/* Mobile menu (visible in mobile) */}
       <div className="flex sm:hidden">

@@ -1,4 +1,3 @@
-import LanguageToggler from './components/LanguageHandler/LanguageHandler';
 import Hero from './components/Hero/Hero';
 import MobileBanner from './components/MobileBanner/MobileBanner';
 import Navigation from './components/Navigation/Navigation';
@@ -11,7 +10,6 @@ const App = () => {
     <div data-testid="app-view">
       <Navigation />
       <Hero />
-      <LanguageToggler />
       <MobileBanner />
     </div>
   );

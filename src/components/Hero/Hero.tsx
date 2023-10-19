@@ -5,13 +5,9 @@ import { someLinks } from '../../utils/common';
 import IconLink from '../IconLink/IconLink';
 import { FaArrowRight } from 'react-icons/fa6';
 import { ReactComponent as Signature } from '../../assets/signature.svg';
-import './styles.css';
 
 const Hero = () => {
   const { t } = useTranslation();
-
-  const heroImageStyles =
-    'absolute bottom-0 right-0 z-10 h-[45%] scale-x-[-1] animate-appear-fast sm:h-[60%] lg:h-[80%] duration-700 mr-8 md:mr-16 xl:mr-20';
 
   return (
     <header
@@ -23,29 +19,38 @@ const Hero = () => {
         className="item-start relative z-10 flex h-full flex-col sm:justify-between"
       >
         <div>
-          {/* Info Section */}
+          {/* info section */}
           <h1 className="header-xxl animate-appear-fast font-medium sm:mb-2">{t('hero.title')}</h1>
           <h2 className="header-base mb-2 animate-appear-medium font-medium">
             {t('hero.subtitle')}
           </h2>
-          <p className="my-6 w-full animate-appear-slow text-base sm:my-10 sm:text-xl md:w-[30rem] lg:w-[34rem] xl:w-[50rem]">
+          <p
+            className="my-6 w-full animate-appear-slow text-base sm:my-10 sm:text-xl 
+          md:w-[30rem] lg:w-[34rem] xl:w-[50rem]"
+          >
             {t('hero.textContent')}
           </p>
 
-          {/* About Me Button */}
+          {/* about me button */}
           <button
             data-testid="about-me-button"
-            className="about-me-button group"
             aria-label="about me"
+            className="text-slate-xl group mb-6 flex animate-appear-slow items-center 
+            justify-center gap-4 text-lg sm:mb-10 sm:text-xl"
           >
-            <span className="animate-bottom-border">{t('hero.aboutMe')}</span>
-            <FaArrowRight className="text-xl text-slate-l group-hover:text-green group-focus:text-green sm:text-2xl" />
+            <span className="animate-bottom-border group-hover:after:w-full group-focus:after:w-full">
+              {t('hero.aboutMe')}
+            </span>
+            <FaArrowRight
+              className="text-slate-xl text-xl group-hover:text-green 
+              group-focus:text-green sm:text-2xl"
+            />
           </button>
 
-          {/* Some Icons */}
+          {/* some icons */}
           <div
-            className="hidden animate-appear-slow gap-10 sm:flex"
             data-testid="some-links-desktop-container"
+            className="hidden animate-appear-slow gap-10 sm:flex"
           >
             {someLinks.map((sl) => (
               <IconLink key={sl.label} {...sl} hoverColor={'green'} />
@@ -53,17 +58,19 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Signature */}
+        {/* signature */}
         <div>
           <Signature className="h-[3rem] animate-appear-slow fill-green sm:h-20" />
         </div>
       </div>
-      {/* Hero Image */}
-      <img data-testid="hero-image" className={`${heroImageStyles} peer`} src={jonas} alt="jonas" />
-      {/* Hero Image Outline */}
+      {/* hero image */}
+      <img data-testid="hero-image" className="hero-image peer" src={jonas} alt="jonas" />
+      {/* hero image outline */}
       <Outline
         data-testid="hero-image-outline"
-        className={`${heroImageStyles} !z-0 translate-x-2 translate-y-1 !fill-green !stroke-green sm:translate-x-3 sm:peer-hover:translate-x-6 sm:peer-hover:!fill-slate-l sm:peer-hover:!stroke-slate-l`}
+        className="hero-image sm:peer-hover:!fill-slate-xl 
+          sm:peer-hover:!stroke-slate-xl !z-0 translate-x-2 translate-y-1 
+          !fill-green !stroke-green sm:translate-x-3 sm:peer-hover:translate-x-6"
       />
     </header>
   );
