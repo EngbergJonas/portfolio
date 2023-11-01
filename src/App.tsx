@@ -7,9 +7,12 @@ ReactModal.setAppElement('#root');
 
 const App = () => {
   return (
-    <div data-testid="app-view">
+    <div data-testid="app-view" className="h-[200vh]">
       <Navigation />
-      <Hero />
+
+      <main>
+        <Hero />
+      </main>
       <MobileBanner />
     </div>
   );

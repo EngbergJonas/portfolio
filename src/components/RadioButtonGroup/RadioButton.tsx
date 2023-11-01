@@ -22,8 +22,8 @@ const RadioButton: FC<RadioButtonProps> = ({
   return (
     <label
       data-testid={`radio-button-label-${value}`}
-      className={`text-slate-xl group relative flex cursor-pointer select-none 
-        items-center pb-6 hover:text-green ${isChecked ? 'font-bold !text-green' : ''}`}
+      className={`group relative flex cursor-pointer select-none items-center pb-6 text-lg
+        text-slate-xl hover:text-green ${isChecked ? 'font-bold !text-green' : ''} leading-7`}
     >
       <input
         type="radio"

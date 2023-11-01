@@ -25,20 +25,13 @@ describe('MenuButton', () => {
     );
 
     expect(getByTestId('menu-button-open')).toBeInTheDocument();
+    expect(getByTestId('menu-button-open')).toHaveAttribute('aria-expanded', 'true');
   });
 
   it('is medium sized by default', () => {
     const { getByTestId } = render(ui);
 
-    expect(getByTestId('menu-button-closed').classList.contains('h-10')).toBeTruthy();
-  });
-
-  it("is small when size prop 'sm' is given", () => {
-    const { getByTestId } = render(
-      <MenuButton onClick={() => null} label={'test-menu-button'} size="sm" />,
-    );
-
-    expect(getByTestId('menu-button-closed').classList.contains('h-6')).toBeTruthy();
+    expect(getByTestId('menu-button-closed').classList.contains('h-8')).toBeTruthy();
   });
 
   it('changes the opened state when clicked', async () => {

@@ -35,8 +35,8 @@ const RadioButtonGroup: FC<RadioButtonGroupProps> = ({
 
   return (
     <fieldset>
-      <legend className="mb-6">{label}</legend>
-      <div className="mx-4">
+      <legend className="mb-6 text-lg sm:text-base">{label}</legend>
+      <div className="ml-4">
         {options.map((o) => (
           <RadioButton
             key={o.value}

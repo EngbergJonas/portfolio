@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import useScrollValues from '../../hooks/useScrollValues';
-import MenuButton from '../MenuButton/MenuButton';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import DesktopNavigation from './DesktopNavigation';
+import MobileNavigation from './MobileNavigation';
 
 const Navigation = () => {
   const { scrollHeight, scrollDirection } = useScrollValues();
@@ -27,24 +27,26 @@ const Navigation = () => {
   }, [scrollDirection, scrollHeight]);
 
   return (
-    <nav
-      data-testid="navigation"
-      id="navigation"
-      className={`fixed left-0 right-0 top-0 z-50 flex h-[70px] w-full 
-        items-center justify-between bg-navy px-8 py-2 md:px-16 xl:px-20 
-        ${navigationShadowClass} ${navigationVisibleClass} backdrop-blur-md`}
-    >
-      {/* Logo (always visible) */}
-      <Link className="group flex h-[2.5rem] justify-center" aria-label="navigate home" to="/">
-        <Logo className="!fill-slate-xl h-full w-full hover:!fill-green group-focus:!fill-green" />
-      </Link>
-      {/* Mobile menu (visible in mobile) */}
-      <div className="flex sm:hidden">
-        <MenuButton label="open navigation" onClick={() => console.log('Open mobile menu')} />
-      </div>
-      {/* Desktop navigation (visible in desktop) */}
-      <DesktopNavigation />
-    </nav>
+    <>
+      <nav
+        data-testid="navigation"
+        id="navigation"
+        className={`fixed left-0 right-0 top-0 z-50 flex h-[70px] 
+        w-full items-center justify-between bg-navy px-8 py-2 backdrop-blur-md md:px-16 
+        xl:px-20  ${navigationShadowClass} ${navigationVisibleClass}`}
+      >
+        <Link
+          to="/"
+          data-testid="logo"
+          aria-label="navigate home"
+          className="group z-50 flex h-9 justify-center"
+        >
+          <Logo className="h-full w-full !fill-green hover:!fill-slate-xl group-focus:!fill-slate-xl" />
+        </Link>
+        <DesktopNavigation />
+        <MobileNavigation />
+      </nav>
+    </>
   );
 };
 

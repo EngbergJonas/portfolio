@@ -16,10 +16,11 @@ const ToggleSwitch: FC<ToggleSwitchProps> = ({ onChange, label }) => {
   return (
     <label
       data-testid={`toggle-switch-label`}
-      className="flex w-full cursor-pointer items-end justify-between"
+      className="flex w-full cursor-pointer items-end justify-between text-lg sm:text-base"
     >
       <input
         data-testid="toggle-switch-input"
+        name={label}
         type="checkbox"
         checked={toggled}
         className="peer sr-only"
@@ -29,7 +30,7 @@ const ToggleSwitch: FC<ToggleSwitchProps> = ({ onChange, label }) => {
       <div className="group relative inline-flex items-center">
         <div
           data-testid="toggle-switch"
-          className="bg-slate-xl h-7 w-14 rounded-full before:absolute
+          className="h-7 w-14 rounded-full bg-green before:absolute
           before:left-[4px] before:top-0.5 before:h-6 before:w-6 before:rounded-full 
           before:bg-navy-l before:transition-all before:content-[''] 
           peer-checked:group-[]:before:translate-x-full peer-focus-visible:group-[]:outline-dashed 

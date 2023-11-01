@@ -23,19 +23,19 @@ export const languages = ['en', 'fi', 'sv'] as const;
 
 export const navigationLinks: Array<NavigationLink> = [
   {
-    to: '/#',
+    to: '/about',
     label: 'about',
   },
   {
-    to: '/#',
+    to: '/experiences',
     label: 'experiences',
   },
   {
-    to: '/#',
+    to: '/resume',
     label: 'resume',
   },
   {
-    to: '/#',
+    to: '/contact',
     label: 'contact',
   },
 ];

@@ -19,9 +19,12 @@ const DesktopNavigation = () => {
   };
 
   return (
-    <div className="hidden h-[2.5rem] justify-center sm:flex">
+    <div data-testid="desktop-navigation" className="hidden h-10 justify-center sm:flex">
       {/* nav items */}
-      <ul className="text-slate-xl flex h-full items-center gap-10 text-lg">
+      <ul
+        data-testid="desktop-navigation-links"
+        className="flex h-full items-center gap-10 text-slate-xl"
+      >
         {navigationLinks.map(({ label, to }) => (
           <NavigationItem key={label} label={t(`navigation.${label}`)} to={to} />
         ))}
@@ -29,11 +32,15 @@ const DesktopNavigation = () => {
       {/* settings modal open button */}
       <button
         data-testid="settings-button"
-        aria-label="settings menu"
+        aria-label="open settings menu"
+        aria-expanded={isSettingsModalOpen}
         className="group ml-10 flex items-center justify-end"
         onClick={toggleSettingsModal}
       >
-        <FaCog className="text-4xl hover:cursor-pointer hover:text-green group-focus:text-green" />
+        <FaCog
+          className="text-[2.25rem] text-green hover:cursor-pointer 
+          hover:text-slate-xl group-focus:text-slate-xl"
+        />
       </button>
       {/* settings modal */}
       <SettingsModal isOpen={isSettingsModalOpen} toggleModal={toggleSettingsModal} />

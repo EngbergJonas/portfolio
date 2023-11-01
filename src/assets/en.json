@@ -2,7 +2,7 @@
   "hero": {
     "title": "Jonas Engberg.",
     "subtitle": "Software Developer.",
-    "textContent": "I'm a full stack developer with an emphasis on the front end. I'm passionate about designing and implementing front and back-end interfaces. I enjoy staying up to date with the newest technologies and I'm always looking to improve my practices.",
+    "textContent": "I'm a <strong>full stack developer</strong> with an emphasis on the front end. I'm passionate about <strong>designing</strong> and implementing front and back-end <strong>interfaces</strong>. I enjoy staying up to date with the newest technologies and I'm always looking to improve my practices.",
     "aboutMe": "About me"
   },
   "error": {
@@ -22,12 +22,13 @@
     "resume": "Resume",
     "contact": "Contact"
   },
-  "settingsModal": {
+  "settings": {
     "title": "Settings",
     "titleTooltip": "Personalize your experience",
     "mode": "Mode",
-    "modeSwitchLabel": "Toggle between dark and light mode",
+    "modeSwitchLabel": "Dark mode",
     "language": "Language",
-    "languageTooltip": "Select your preferred language"
-  }
+    "languageTooltip": "Select your language"
+  },
+  "pageNrOfAll": "Page <1>{{pageNr}}</1> of <3>{{pagesCount}}</3>"
 }

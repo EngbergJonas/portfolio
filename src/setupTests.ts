@@ -32,5 +32,8 @@ jest.mock('react-i18next', () => {
       type: '3rdParty',
       init: () => {},
     },
+    Trans: ({ i18nKey }: { i18nKey: string }) => {
+      return i18nKey;
+    }, // this line was missing (() => jest.fn() might also work)
   };
 });

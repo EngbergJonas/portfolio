@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply m-0 w-full overflow-x-hidden bg-navy p-0 font-lato text-slate;
+  @apply m-0 w-full bg-navy p-0 font-lato text-slate;
 }
 
 h1,
@@ -13,18 +13,17 @@ h4 {
   @apply font-raleway;
 }
 
-/* margin class to be used by app views */
-.app-margin {
-  @apply mx-8 md:mx-16 xl:mx-20;
+strong {
+  @apply font-normal text-green;
 }
 
-/* these title classes could be changed later */
-.header-xxl {
-  @apply text-slate-xl text-4xl font-bold sm:text-6xl md:text-7xl;
+.title-xl {
+  @apply animate-appear-fast text-3xl font-bold text-slate-xl 
+  sm:mb-2 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
 }
-
-.header-base {
-  @apply text-xl font-bold sm:text-2xl;
+.title-lg {
+  @apply mb-4 animate-appear-medium text-lg font-bold 
+  sm:text-xl md:mb-8 md:text-2xl lg:text-3xl xl:text-4xl;
 }
 
 /* change text selection color (firefox) */
@@ -54,33 +53,12 @@ h4 {
   @apply w-full;
 }
 
-/* react modal needs styles applied like this for animating */
-.ReactModal__Overlay {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 300ms ease-in;
-}
-.ReactModal__Overlay--after-open {
-  opacity: 1;
-  transform: translateX(0px);
-}
-.ReactModal__Overlay--before-close {
-  opacity: 0;
-  transform: translateX(100px);
-}
-
-/* hero image used on hero component */
-.hero-image {
-  @apply absolute bottom-0 right-0 z-10 mr-8 h-[45%] scale-x-[-1] 
-  animate-appear-fast duration-700 sm:h-[60%] md:mr-16 lg:h-[80%] xl:mr-20;
-}
-
 /* menu buttons burger styles */
 .menu-burger-closed {
   @apply bg-green after:w-[70%];
 }
 .menu-burger-open {
-  @apply before:!translate-y-0 before:rotate-45 after:w-full after:!translate-y-0 after:-rotate-45;
+  @apply before:!w-[90%] before:!translate-y-0 before:rotate-45 after:w-[90%] after:!translate-y-0 after:-rotate-45;
 }
 
 /* radio button types */
